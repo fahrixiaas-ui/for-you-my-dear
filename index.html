@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#240910" />
+  <meta name="description" content="Sebuah dunia kecil yang dibuat khusus untuk Sayang." />
+  <title>For You, Sayang ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- 1. PASSWORD -->
+  <section class="gate" id="password-gate">
+    <div class="gate-card">
+      <div class="gate-heart">♡</div>
+      <p class="eyebrow">A little world, just for you</p>
+      <h1>Just for <em>you.</em></h1>
+      <p class="gate-copy">Ada dunia kecil yang menunggumu di dalam.</p>
+      <form id="password-form" autocomplete="off">
+        <label class="sr-only" for="site-password">Password</label>
+        <input id="site-password" type="password" inputmode="numeric" maxlength="6" placeholder="Masukkan password" required>
+        <button class="primary-button" type="submit">Masuk <span>↗</span></button>
+      </form>
+      <p class="gate-hint">Hint: our confess date</p>
+      <p class="gate-feedback" id="gate-feedback" role="status"></p>
+    </div>
+    <div class="gate-bottom">a little secret, made with love ♡</div>
+  </section>
+
+  <!-- 2. WELCOME 10 DETIK -->
+  <section class="welcome-screen" id="welcome-screen" hidden>
+    <div class="welcome-glow"></div>
+    <div class="welcome-content">
+      <div class="welcome-heart">♥</div>
+      <p class="eyebrow">You are my favorite universe</p>
+      <h2>Welcome,<br><em>My Universe.</em></h2>
+      <p>Kalau dunia punya banyak sekali hal indah,<br>aku tetap akan menemukan kamu sebagai favoritku.</p>
+      <div class="welcome-countdown" id="welcome-countdown">10</div>
+      <div class="welcome-caption">a little moment, just for you</div>
+    </div>
+  </section>
+
+  <!-- 3. WEBSITE -->
+  <div id="website" hidden>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+    <div id="floating-hearts" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Kembali ke awal">little things <span>♡</span></a>
+      <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false">
+        <span class="music-dot"></span><span id="music-label">Putar musik</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <p class="eyebrow reveal">A little world, just for you</p>
+        <h1 class="hero-title reveal">Untuk Azalia,<br><em>yang tersayang.</em></h1>
+        <p class="hero-copy reveal">Ada beberapa hal yang ingin kusampaikan.<br>Pelan-pelan saja, ya. Semuanya dibuat khusus untukmu.</p>
+        <button class="primary-button reveal" id="begin-button" type="button">Mulai perjalanan kecil ini <span>↗</span></button>
+        <div class="hero-note reveal"><span>♡</span> dibuat dengan sepenuh hati</div>
+        <div class="scroll-cue" aria-hidden="true"><span></span>scroll pelan-pelan</div>
+      </section>
+
+      <section class="anthem-section section" id="anthem">
+        <div class="anthem-inner reveal">
+          <p class="eyebrow">A song that feels like us</p>
+          <p class="anthem-instruction">Sebelum scroll lebih lanjut sambil putar ini dlu yaa..</p>
+          <h2 class="anthem-title">Our Anthem</h2>
+          <div class="music-card">
+            <div class="record-art" id="record-art" aria-hidden="true"><div class="record-center">♡</div></div>
+            <div class="track-info">
+              <p class="track-label">Our little soundtrack</p>
+              <h3>Karolina</h3>
+              <p class="track-artist">SORE</p>
+              <div class="audio-controls">
+                <audio id="background-music" preload="metadata" loop><source src="assets/lagu.mp3" type="audio/mpeg"></audio>
+                <button class="round-control" id="anthem-play" type="button" aria-label="Putar Karolina">▶</button>
+                <div class="track-progress"><div id="track-progress-fill"></div></div>
+                <span class="music-note">♫</span>
+              </div>
+              <p class="anthem-footnote">Lagu ini punya tempat spesial di cerita kita. Putar, lalu nikmati perjalanan kecil ini bersamaku. ♡</p>
+              <p class="audio-error" id="audio-error" role="status"></p>
+            </div>
+          </div>
+          <p class="anthem-reminder">Biar lagunya menemani kamu sampai akhir ♡</p>
+        </div>
+      </section>
+
+      <section class="letter-section section" id="letter">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 · A letter for you</p>
+          <h2>Ada surat <em>untukmu.</em></h2>
+          <p>Tekan amplopnya. Ada sesuatu di dalamnya.</p>
+        </div>
+        <button class="envelope-button reveal" id="envelope-button" type="button" aria-label="Buka surat cinta" aria-expanded="false">
+          <div class="envelope">
+            <div class="envelope-back"></div>
+            <div class="letter-paper">
+              <span class="letter-stamp">for<br>you</span>
+              <span class="letter-teaser">Dear, Sayang...</span>
+              <span class="letter-small">with love, always ♡</span>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+            <div class="seal">♡</div>
+          </div>
+          <span class="tap-hint" id="tap-hint">ketuk untuk membuka</span>
+        </button>
+
+        <article class="letter-content" id="letter-content" hidden>
+          <p class="letter-greeting">Happy birthday, My Universe.</p>
+          <p>Hari ini, semesta kembali merayakan hadirmu,<br>seseorang yang tanpa sadar menjadi bagian terindah dalam hidupku.<br>Di antara banyaknya hal yang datang dan pergi,<br>aku bersyukur semesta memilih untuk mempertemukan kita.</p>
+          <p>Di usiamu yang baru, semoga banyak hal baik menemukanmu,<br>semoga mimpi-mimpimu perlahan menjadi nyata,<br>dan ketika dunia terasa melelahkan,<br><strong><em>may you always find a reason to smile.</em></strong></p>
+          <p>Aku tak bisa menjanjikan hari-hari yang selalu sempurna,<br>tapi aku ingin tetap ada di setiap musim hidupmu.<br>Menemani tawamu, memeluk lelahmu,<br>dan mencintaimu, bahkan dalam hari-hari yang sederhana.</p>
+          <p><strong><em>If the universe ever asks me "where my home is?",</em></strong><br>aku akan menjawab "di mana pun yang ada kamu".<br>Selamat bertambah usia, semestaku.<br>Semoga di antara banyaknya hari esok,<br>aku masih menjadi bagian dari bahagiamu.</p>
+          <p>Layaknya Dr. Strange, begitupun ausaf fahri<br><strong><em>"I Love U in every Universe"</em></strong> ♡</p>
+          <p class="letter-signoff">Always yours,<br><em>ausaf fahri ♡</em></p>
+        </article>
+      </section>
+
+      <section class="memories-section section" id="memories">
+        <div class="section-heading reveal">
+          <p class="eyebrow">02 · Little memories</p>
+          <h2>Hal-hal kecil,<br><em>yang berarti besar.</em></h2>
+          <p>let see our moment..</p>
+        </div>
+        <div class="memory-grid">
+          <article class="memory-card reveal">
+            <div class="memory-photo photo-one">
+              <img src="assets/kenangan-1.jpg" alt="Kenangan pertama">
+              <span class="photo-placeholder">Ganti dengan<br>foto favoritmu</span>
+              <span class="photo-number">01</span>
+            </div>
+            <div class="memory-caption"><span class="memory-date">Momen favorit</span><h3>Study date</h3><p>Hal yang bikin kita semakin dekat dan paling menyenangkan.</p></div>
+          </article>
+          <article class="memory-card reveal">
+            <div class="memory-photo photo-two">
+              <img src="assets/kenangan-2.jpg" alt="Kenangan kedua">
+              <span class="photo-placeholder">Satu lagi<br>cerita kita</span>
+              <span class="photo-number">02</span>
+            </div>
+            <div class="memory-caption"><span class="memory-date">Yang selalu diingat</span><h3>Our Last Photobooth</h3><p>Azalia yang selalu suka mengajak photobooth. Setelah ini aku yakin akan banyak photobooth lainnya.</p></div>
+          </article>
+          <article class="memory-card reveal">
+            <div class="memory-photo photo-three">
+              <img src="assets/kenangan-3.jpg" alt="Kenangan ketiga">
+              <span class="photo-placeholder">Simpan momen<br>ini di sini</span>
+              <span class="photo-number">03</span>
+            </div>
+            <div class="memory-caption"><span class="memory-date">satu dari banyak</span><h3>Hiking Date.</h3><p>Finally! hiking date. dari banyaknya wishlist date kita, hiking date yang paling kita tunggu tunggu. mari kita perpanjang cerita kita</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="question-section section" id="question">
+        <div class="question-orbit orbit-one"></div><div class="question-orbit orbit-two"></div>
+        <div class="question-inner reveal">
+          <p class="eyebrow">One last thing</p>
+          <div class="big-heart">♡</div>
+          <h2>Sayang, boleh aku<br><em>terus memilih kamu?</em></h2>
+          <p class="question-copy">Bukan cuma hari ini, tapi juga di hari-hari biasa yang akan datang. Di tengah cerita yang mudah maupun yang perlu kita usahakan bersama.</p>
+          <div class="answer-buttons">
+            <button class="primary-button" id="yes-button" type="button">Iya, boleh ♡</button>
+            <button class="soft-button" id="also-button" type="button">Aku mau bilang sesuatu...</button>
+          </div>
+          <p class="answer-response" id="answer-response" role="status"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>made especially for Azalia Ayu Faradita <span>♡</span></p>
+      <p class="footer-small">Little page, for Big Feeling.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
